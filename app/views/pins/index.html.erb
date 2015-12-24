@@ -10,14 +10,14 @@
           <div class="center">
             <%= pin.description %><br/>
             <strong><%= pin.user.name if pin.user %></strong><br/>
-            <% if pin.user == current_user %>
+            <% if pin.user == current_user && user_sign_in? %>
           </div>
         </div>
         <div class="panel-footer">
           <div class="center">
             <%= link_to 'Edit', edit_pin_path(pin) %> | 
             <%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %><br/>
-          <div class="center">
+          </div>
         </div>
         <% end %>
       </div>
